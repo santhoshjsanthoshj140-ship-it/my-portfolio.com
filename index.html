@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio with Tasks</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .sidebar {
+      width: 250px;
+      background: #111827;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .sidebar img {
+      width: 200px;
+      height: 175px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #fff;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 10px;
+    }
+
+    .nav-links {
+      list-style: none;
+      width: 100%;
+    }
+
+    .nav-links li {
+      margin: 15px 0;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+    .nav-links a:hover {
+      background: #2563eb;
+      border-radius: 6px;
+    }
+    .main-content {
+      flex: 1;
+      background: url("iam.jpg") no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: left;
+      padding: 40px;
+      position: relative;
+    }
+
+    .section {
+      display: none;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px 30px;
+      border-radius: 10px;
+      width: 80%;
+      text-align: center;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .section h1 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+    .about-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      text-align: left;
+    }
+
+    .about-details {
+      flex: 1;
+    }
+
+    .about-details p {
+      font-size: 18px;
+      margin: 8px 0;
+    }
+
+    .about-img {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-img img {
+      width: 250px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid #fff;
+    }
+    .tasks ul,
+    #project ul {
+      list-style: none;
+    }
+
+    .tasks li,
+    #project li {
+      padding: 8px;
+      margin: 5px 0;
+      background: #1f2937;
+      border-radius: 6px;
+    }
+    .tasks a,
+    #task1 a,
+    #task2 a,
+    #task3 a,
+    #task4 a,
+    #task5 a,
+    #project a {
+      color: #00ffcc;
+      font-weight: bold;
+      text-decoration: none;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .tasks a:hover,
+    #task1 a:hover,
+    #task2 a:hover,
+    #task3 a:hover,
+    #task4 a:hover,
+    #task5 a:hover,
+    #project a:hover {
+      color: #ff6600;
+      text-decoration: underline;
+    }
+    .contact-container {
+      display: flex;
+      gap: 30px;
+      text-align: left;
+    }
+
+    .contact-info {
+      flex: 1;
+      background: #1f2937;
+      padding: 20px;
+      border-radius: 8px;
+      color: white;
+    }
+
+    .contact-info div {
+      margin-bottom: 20px;
+    }
+
+    .contact-info h4 {
+      margin-bottom: 5px;
+    }
+
+    .contact-form {
+      flex: 2;
+      background: #1f2937;
+      padding: 20px;
+      border-radius: 8px;
+      color: white;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .contact-form button {
+      background: #0ea5e9;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .contact-form button:hover {
+      background: #0284c7;
+    }
+
+    iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <img src="santhosh.jpg"><br>
+    <h2>NAME:SANTHOSH.J</h2>
+
+    <ul class="nav-links">
+      <li><a onclick="showSection('home')">🏠 Home</a></li>
+      <li><a onclick="showSection('about')">👤 About</a></li>
+      <li><a onclick="showSection('portfolio')">🖼 Portfolio</a></li>
+      <li><a onclick="showSection('tasks')">✅ Weekly Tasks</a></li>
+      <li><a onclick="showSection('project')">📂 Project</a></li>
+      <li><a onclick="showSection('contact')">📞 Contact</a></li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <div class="section active" id="home">
+      <h1>I AM SANTHOSH.J</h1><br>
+      <h2>REG NO AND NMID:   E18E788E7D0FBDEA815457BA4ACD314A</h2><br>
+      <h2>DEPARTMENT: B.sc COMPUTER SCIENCE</h2><br>
+      <h2>COLLEGE: VOORHEES COLLEGE-VELLORE,THIRUVALLUVAR<br><br>UNIVERSITY</h2>
+    </div>
+    <div class="section" id="about">
+      <h1>About Me</h1>
+      <div class="about-container">
+        <div class="about-details">
+          <p><b>NAME:</b> Santhosh.J</p>
+          <p><b>DATE OF BIRTH:</b> 26/12/2006</p>
+          <p><b>BLOOD GROUP:</b> B+</p>
+          <p><b>PHONE NUMBER:</b> 6374470215</p>
+          <p><b>EMAIL ID:</b> santhoshjsanthoshj@gmail.com</p>
+          <p><b>INSTAGRAM ID:</b> 1106santhosh</p>
+          <p><b>HOBBY:</b> Cycling in a Weekend</p>
+          <p><b>GAMES:</b> Chess</p>
+        </div>
+        <div class="about-img">
+          <img src="me1.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="section" id="portfolio">
+      <h1>My Portfolio</h1>
+      <h2>📄 Project 1 Description</h2> <br>
+
+<p>Electric Vehicle vs Fuel Vehicle is an interactive comparison tool that highlights the key differences between EVs and fuel-based vehicles.
+This project focuses on:</p><br><br>
+
+  <p>1.<b>Environmental Impact 🌱</b> → Shows how EVs reduce carbon emissions.</p><br>
+  <p>2.<b>Economic Comparison 💰</b> → Includes calculators for cost savings on daily, weekly,monthly and yearly usage.</p><br>
+  <p>3.<b>Health & Technology Aspects ⚙️</b> → Explains how EVs contribute to cleaner air and future tech growth.</p><br>
+  <p>4.<b>User-Friendly Dashboard 📊</b> → Provides charts, graphs, and clear visuals for easy understanding.</p><br><br>
+<p>👉 With this project, users can quickly see the advantages of switching to electric vehicles in terms of <b>cost</b>, <b>environment</b>, and <b>health</b>.</p>
+
+
+
+
+
+
+</p>
+    </div>
+    <div class="section" id="tasks">
+      <h1>Weekly Tasks</h1>
+      <div class="tasks">
+        <ul>
+          <li><a onclick="showTask('task1')"><b>TASK 1 :</b> IMB SKILLS BULID PIC</a></li>
+          <li><a onclick="showTask('task2')"><b>TASK 2 :</b> BASIC HTML PAGE</a></li>
+          <li><a onclick="showTask('task3')"><b>TASK 3 :</b> TIME TABLE AND USING MEDIA</a></li>
+          <li><a onclick="showTask('task4')"><b>TASK 4 :</b> ONLINE REGISTRATION FORM</a></li>
+          <li><a onclick="showTask('task5')"><b>TASK 5 :</b> STUDENT ID CARD</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="task1">
+      <h1>Task 1</h1>
+      <p><a href="https://santhoshjsanthoshj140-ship-it.github.io/profile.com/" target="_self">🔗 IMB PROFILE</a></p>
+    </div>
+
+    <div class="section" id="task2">
+      <h1>Task 2</h1>
+      <p><a href="https://santhoshjsanthoshj140-ship-it.github.io/basicwebpage/" target="_self">🔗 BASIC WEB PAGE</a></p>
+    </div>
+
+    <div class="section" id="task3">
+      <h1>Task 3</h1>
+      <p>1. TIME TABLE</p><br>
+      <a href="https://santhoshjsanthoshj140-ship-it.github.io/time-table/" target="_self">🔗 TIME TABLE</a><br><br>
+      <p>2. USING MEDIA BY HTML</p><br>
+      <a href="https://santhoshjsanthoshj140-ship-it.github.io/Usingmedia./" target="_self">🔗 AUDIO AND VIDEO</a>
+    </div>
+
+    <div class="section" id="task4">
+      <h1>Task 4</h1>
+      <p><a href="https://santhoshjsanthoshj140-ship-it.github.io/form.com/" target="_self">🔗 ONLINE REGISTRATION FORM</a></p>
+    </div>
+
+    <div class="section" id="task5">
+      <h1>Task 5</h1>
+      <p><a href="https://santhoshjsanthoshj140-ship-it.github.io/Student-Id-card.com/" target="_self">🔗 STUDENT ID CARD</a></p>
+    </div>
+    <div class="section" id="project">
+      <h1>My Projects</h1>
+      <ul>
+        <li><a href="https://santhoshjsanthoshj140-ship-it.github.io/Electric-Vehicle-vs-Fule-Vehicle./" target="_self">📌 Project 1: ELECTRIC VEHICLE vs FUEL VEHICLE</a></li>
+        <li><a href="#">📌 Project 2: ----------</a></li>
+        <li><a href="#">📌 Project 3: ----------</a></li>
+      </ul>
+    </div>
+    <div class="section" id="contact">
+      <h1>Contact</h1>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div>
+            <h4>📍 Address</h4><br>
+            <p>37/14 PILLIYAR KOVIL STREET , THOTTAPALAYAM VELLORE-4</p>
+          </div>
+          <div>
+            <h4>📞 Call Us</h4><br>
+            <p>1) 6374470215</p><br>
+            <p>2) 8610545928</p>
+          </div>
+          <div>
+            <h4>📧 Email Us</h4><br>
+            <p>santhoshjsanthoshj140@gmail.com</p>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="text" placeholder="Subject" required>
+            <textarea rows="6" placeholder="Message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const text = "I'm a Photographer";
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        const typingEl = document.getElementById("typing");
+        if (typingEl) {
+          typingEl.innerHTML += text.charAt(i);
+        }
+        i++;
+        setTimeout(typeWriter, 100);
+      }
+    }
+    window.onload = typeWriter;
+
+    function showSection(id) {
+      let sections = document.querySelectorAll(".section");
+      sections.forEach(sec => sec.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+
+    function showTask(id) {
+      showSection(id);
+    }
+  </script>
+
+</body>
+</html>
